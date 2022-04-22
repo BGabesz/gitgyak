@@ -1,0 +1,4 @@
+package gyak;
+class UgyessegComparator {
+    
+}

@@ -1,8 +1,9 @@
 package gyak;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Eszkoz {
+public class Eszkoz implements Serializable{
     String nev;
     int suly;
 

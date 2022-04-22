@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public abstract class Karakter implements Comparable<Eszkoz>, Cloneable{
+public abstract class Karakter implements Cloneable, Serializable {
     String nev,faj;
     ArrayList<Eszkoz> eszkozok;
     private boolean rendezes;

@@ -1,8 +1,22 @@
 package gyak;
-public class Harcos extends Karakter{
+
+import java.io.Serializable;
+import java.util.Iterator;
+
+public class Harcos extends Karakter implements Comparable<Harcos>, Serializable, Iterable<Eszkoz> {
     int ugyesseg,ero;
 
+    public static EroComparator RendezEro() {
+        return new EroComparator();
+    }
+
+    public static UgyessegComparator RendezUgy() {
+        return new UgyessegComparator();
+    }
     
+    public Harcos(String nev, int ero, int ugyesseg) {
+        this(nev, "ember", ero, ugyesseg);
+    }
     public Harcos(String nev, String faj, int ero, int ugyesseg) {
         super(nev, faj);
         this.ero = ero;
@@ -15,8 +29,14 @@ public class Harcos extends Karakter{
                 "\n\tugyesseg=" + ugyesseg + 
                 "\n}";
     }
-    public int compareTo(Eszkoz o) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    @Override
+    public int compareTo(Harcos o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Iterator<Eszkoz> iterator() {
+        return super.getEszkozok().iterator();
     }
     
 }
